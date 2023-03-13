@@ -1,16 +1,4 @@
 #!/bin/bash
-
-# Read the file line by line, and print the third line
-count=1
-while IFS='' read -r line || [[ -n "$line" ]]; do
-    if [ $count -eq 3 ]; then
-        echo $line
-        exit 0
-    fi
-    count=$((count+1))
-done < "iacta"
-
-# If the file has less than 3 lines, print an error message
-echo "Error: The file 'iacta' has less than 3 lines." >&2
-exit 1
+third_line=$(head -n 3 iacta | tail -n 1)
+echo "$third_line"
 
