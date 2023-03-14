@@ -1,2 +1,2 @@
 #!/bin/bash
-alias ls="ls -alh --color=auto"
+alias l="ls -la"
